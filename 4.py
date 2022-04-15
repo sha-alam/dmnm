@@ -1,19 +1,15 @@
-INF = 1000000000
+INF = 1000
 def floyd_warshall(vertex, adjacency_matrix):
   
-  for k in range(0, vertex):
-    for i in range(0, vertex):
-      for j in range(0, vertex):
+  for k in range(vertex):
+    for i in range(vertex):
+      for j in range(vertex):
         adjacency_matrix[i][j] = min(adjacency_matrix[i][j], adjacency_matrix[i][k] + adjacency_matrix[k][j])
-  print("o/d", end='')
-  for i in range(0, vertex):
-    print("\t{:d}".format(i+1), end='')
-  print()
-
-  for i in range(0, vertex):
-    print("{:d}".format(i+1), end='')
+  
+  for i in range(vertex):
     for j in range(0,vertex):
-      print("\t{:d}".format(adjacency_matrix[i][j]), end='')
+      # [print("INF\t") if adjacency_matrix[i][j]==1000 else print((adjacency_matrix[i][j]),end='\t')]
+      print((adjacency_matrix[i][j]),end='\t')
     print()
 
 adjacency_matrix = [

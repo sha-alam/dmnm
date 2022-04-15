@@ -1,23 +1,22 @@
-MAX_ITER = 1000000
+def func(x):
+    return x * x * x - 2 * x - 5
 
-def func( x ): 
-  return (x * x * x - 2 * x -5) 
+def falsi(a, b):
+    if func(a) * func(b) >= 0:
+        print("You have not assumed right a and b")
+        return -1
+    for i in range(100000):
+        c = (a * func(b) - b * func(a)) / (func(b) - func(a))
+        if func(c) == 0:
+            break
+        if func(a) * func(c) < 0:
+            b = c
+        else:
+            a = c
+    print(f"The root is {round(c, 4)}")
 
-def regulaFalsi( a , b): 
-  if func(a) * func(b) >= 0: 
-    print("You have not assumed right a and b") 
-    return -1
-  c = a 
-  for i in range(MAX_ITER): 
+    a = 2
+    b = 3
+    falsi(a, b)
 
-    c = (a * func(b) - b * func(a))/ (func(b) - func(a)) 
-    if func(c) == 0: 
-      break
-    elif func(c) * func(a) < 0: 
-      b = c 
-    else: 
-      a = c 
-  print("The value of root is : " , '%.4f' %c) 
-a =-200
-b = 300
-regulaFalsi(a, b) 
+

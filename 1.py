@@ -7,7 +7,7 @@ for a,b in product(A,A):
     if a%b==0:
         R1+=[(a,b)]
 
-R2=[(a,b) for i,j in product(A,A) if a<=b]
+R2=[(a,b) for a,b in product(A,A) if a<=b]
 print(f'The pair list is for a/b: {R1}')
 # print ("The pair list is for a/b : " + str(R1))
 print (f'The pair list is for a<=b : {R2}')

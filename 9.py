@@ -9,4 +9,4 @@ for i in range(n):
         if i != j:
             p =p* (value - x[j]) / (x[i] - x[j])
     sum =sum+ p * y[i]
-print(sum)
+print(round(sum,4))
